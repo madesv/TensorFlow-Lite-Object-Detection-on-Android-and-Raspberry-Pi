@@ -18,11 +18,15 @@ pip3 install opencv-python==3.4.6.27
 
 version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
 
+if [ $version == "3.8" ]; then
+pip3 install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.2.0-cp38-cp38-manylinux2010_x86_64.whl
+fi
+
 if [ $version == "3.7" ]; then
-pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
+pip3 install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl
 fi
 
 if [ $version == "3.5" ]; then
-pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp35-cp35m-linux_armv7l.whl
+pip3 install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.2.0-cp35-cp35m-manylinux2010_x86_64.whl
 fi
 
